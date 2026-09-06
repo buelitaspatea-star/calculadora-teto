@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Teto 🎀</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+
+  <body>
+    <main class="calculator">
+
+      <!-- TETO -->
+      <div class="teto-container">
+        <img src="./imagenes/teto.jpeg" alt="Teto" class="teto-image">
+      </div>
+
+      <!-- PANTALLA -->
+      <div class="display-panel">
+        <div id="history" class="history">0</div>
+        <div id="display" class="display" aria-live="polite">0</div>
+      </div>
+
+      <!-- BOTONES -->
+      <div class="buttons">
+
+        <button class="button secondary" data-action="clear" type="button">C</button>
+        <button class="button secondary" data-action="delete" type="button">⌫</button>
+        <button class="button secondary" data-action="percent" type="button">%</button>
+        <button class="button operator" data-action="operator" data-value="/" type="button">÷</button>
+
+        <button class="button" data-action="number" data-value="7" type="button">7</button>
+        <button class="button" data-action="number" data-value="8" type="button">8</button>
+        <button class="button" data-action="number" data-value="9" type="button">9</button>
+        <button class="button operator" data-action="operator" data-value="*" type="button">×</button>
+
+        <button class="button" data-action="number" data-value="4" type="button">4</button>
+        <button class="button" data-action="number" data-value="5" type="button">5</button>
+        <button class="button" data-action="number" data-value="6" type="button">6</button>
+        <button class="button operator" data-action="operator" data-value="-" type="button">−</button>
+
+        <button class="button" data-action="number" data-value="1" type="button">1</button>
+        <button class="button" data-action="number" data-value="2" type="button">2</button>
+        <button class="button" data-action="number" data-value="3" type="button">3</button>
+        <button class="button operator" data-action="operator" data-value="+" type="button">+</button>
+
+        <button class="button zero" data-action="number" data-value="0" type="button">0</button>
+        <button class="button" data-action="decimal" type="button">.</button>
+        <button class="button equal" data-action="equals" type="button">=</button>
+
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+  }
+    </script>
+
+  </body>
+</html>
+
+
+

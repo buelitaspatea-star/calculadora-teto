@@ -1,0 +1,19 @@
+
+{
+  "name": "Calculadora de Teto",
+  "short_name": "Teto Calc",
+  "description": "Una calculadora con Kasane Teto 🎀",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#241b22",
+  "theme_color": "#d94b5b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./imagenes/TetoCalculadora.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+

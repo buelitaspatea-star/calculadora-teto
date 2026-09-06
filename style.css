@@ -1,0 +1,225 @@
+:root {
+  --teto-red: #d94b5b;
+  --teto-pink: #f3a6b5;
+  --teto-light: #fff5f7;
+  --dark: #241b22;
+  --button: #3b3036;
+  --button-hover: #55434c;
+  --operator: #d94b5b;
+  --operator-hover: #ed6675;
+  --secondary: #765e68;
+  --equal: #b9324b;
+  --text: #ffffff;
+  --muted: #c9aeb6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(circle at top, #5b3541, #241b22 60%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+/* CALCULADORA */
+
+.calculator {
+  width: min(92vw, 390px);
+  background: rgba(36, 27, 34, 0.97);
+  border: 2px solid rgba(243, 166, 181, 0.35);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(217, 75, 91, 0.15);
+}
+
+/* TETO */
+
+.teto-container {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 166, 181, 0.18),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+.teto-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* PANTALLA */
+
+.display-panel {
+  padding: 15px 20px 18px;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: right;
+}
+
+.history {
+  min-height: 24px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.display {
+  min-height: 58px;
+  margin-top: 5px;
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* BOTONES */
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.button {
+  appearance: none;
+  border: none;
+  border-radius: 15px;
+  min-height: 62px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--button);
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.button:hover {
+  background: var(--button-hover);
+}
+
+.button:active {
+  transform: scale(0.94);
+}
+
+/* OPERADORES */
+
+.button.operator {
+  background: var(--operator);
+  box-shadow: 0 4px 12px rgba(217, 75, 91, 0.25);
+}
+
+.button.operator:hover {
+  background: var(--operator-hover);
+}
+
+/* BOTONES SECUNDARIOS */
+
+.button.secondary {
+  background: var(--secondary);
+}
+
+.button.secondary:hover {
+  background: #8b707b;
+}
+
+/* IGUAL */
+
+.button.equal {
+  background: var(--equal);
+  grid-column: span 2;
+}
+
+.button.equal:hover {
+  background: #d3465c;
+}
+
+/* CERO */
+
+.button.zero {
+  grid-column: span 2;
+}
+
+/* CELULARES */
+
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  .calculator {
+    width: 100%;
+    border-radius: 22px;
+  }
+
+  .teto-container {
+    height: 160px;
+  }
+
+  .teto-image {
+    width: 145px;
+    height: 145px;
+  }
+
+  .buttons {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .button {
+    min-height: 55px;
+    border-radius: 13px;
+  }
+}
+/* EXPERIENCIA TÁCTIL EN CELULAR */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  padding:
+    max(10px, env(safe-area-inset-top))
+    max(10px, env(safe-area-inset-right))
+    max(10px, env(safe-area-inset-bottom))
+    max(10px, env(safe-area-inset-left));
+}
+
+.button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.teto-image {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
